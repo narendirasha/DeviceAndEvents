@@ -9,23 +9,28 @@
     // Wait for device API libraries to load
     //
     function onLoad() {
+      document.addEventListener("online", onOnline, false);
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
     // device APIs are available
     //
     function onDeviceReady() {
-        document.addEventListener("pause", onPause, false);
-        document.addEventListener("resume", onResume, false);
+       document.addEventListener("backbutton", onBackKeyDown, false);
+      document.addEventListener("online", onOnline, false);
+        document.addEventListener("offline", onOffline, false);
     }
 
     // Handle the pause event
     //
-    function onPause() {
-      alert('Naren  its pausing')
+    function onOnline() {
+      alert('Naren  its onOnline')
     }
-    function onResume() {
-      alert('Naren its resuming')
+    function onOffline() {
+      alert('Naren its onOffline')
+    }
+    function onBackKeyDown() {
+      alert('Naren its onBackKeyDown')
     }
 
     </script>

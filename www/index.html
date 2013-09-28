@@ -16,6 +16,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
+    	 alert('Device ready')
     	document.addEventListener("backbutton", onBackKeyDown, false);
          document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
     	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
@@ -25,7 +26,7 @@
     	 // window.addEventListener("batterylow", onBatteryLow, false);
     	 // window.addEventListener("batterystatus", onBatteryStatus, false);
     	 
-    	 alert('Device ready')
+    	
        
       	document.addEventListener("online", onOnline, false);
         document.addEventListener("offline", onOffline, false);

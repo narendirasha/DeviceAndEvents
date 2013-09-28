@@ -16,20 +16,21 @@
     // device APIs are available
     //
     function onDeviceReady() {
+    	document.addEventListener("backbutton", onBackKeyDown, false);
+         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+    	  
+    	 document.addEventListener("menubutton", onMenuKeyDown, false);
       //window.addEventListener("batterycritical", onBatteryCritical, false);
     	 // window.addEventListener("batterylow", onBatteryLow, false);
     	 // window.addEventListener("batterystatus", onBatteryStatus, false);
     	 
     	 alert('Device ready')
        
-      document.addEventListener("online", onOnline, false);
+      	document.addEventListener("online", onOnline, false);
         document.addEventListener("offline", onOffline, false);
         
-        document.addEventListener("backbutton", onBackKeyDown, false);
-         //document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
-    	 // document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
-    	  
-    	 document.addEventListener("menubutton", onMenuKeyDown, false);
+        
     	// document.addEventListener("searchbutton", onSearchKeyDown, false);
     	 //document.addEventListener("endcallbutton", onEndCallKeyDown, false);
     	 

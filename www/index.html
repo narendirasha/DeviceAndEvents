@@ -1,64 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Device Properties Example</title>
+    <title>Pause Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
     // device APIs are available
     //
     function onDeviceReady() {
-      
-        alert('Device is ready Naren')
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Model: '    + device.model    + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-                            
         document.addEventListener("pause", onPause, false);
-      	document.addEventListener("resume", onResume, false);
-      	
-      	document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
-    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
-    	  
-       document.addEventListener("online", onOnline2, false);
-    	 document.addEventListener("offline", onOffline, false);
-    	 
-    	 
-    function onVolumeDownKeyDown() {
-    	alert('Hi Naren: onVolumeDownKeyDown event')
-    		}
-    
-    function onVolumeUpKeyDown() {
-    	alert('Hi Naren: onVolumeUpKeyDown event')
-    		}
-                             
+        document.addEventListener("resume", onResume, false);
     }
-    
-    
-    function onOnline2(){
-    	alert('Hi Naren: onOnline222 event')
-    }
-    
-    function onOffline(){
-    	alert('Hi Naren: onOffline event')
-    }
-   
 
-    
-    
+    // Handle the pause event
+    //
+    function onPause() {
+      alert('Naren  its pausing')
+    }
+    function onResume() {
+      alert('Naren its resuming')
+    }
+
     </script>
   </head>
-  <body>
-    <p id="deviceProperties">Loading device properties...</p>
-    
+  <body onload="onLoad()">
   </body>
 </html>

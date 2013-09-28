@@ -15,13 +15,15 @@
     // device APIs are available
     //
     function onDeviceReady() {
+    	alert('device is ready...')
+    	document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
         window.addEventListener("batterycritical", onBatteryCritical, false);
         window.addEventListener("batterylow", onBatteryLow, false);
     	window.addEventListener("batterystatus", onBatteryStatus, false);
     	document.addEventListener("menubutton", onMenuKeyDown, false);
     	 document.addEventListener("backbutton", onBackKeyDown, false);
-    	  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
-    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+    	  
     }
 	
 	
@@ -72,5 +74,7 @@
     </script>
   </head>
   <body onload="onLoad()">
+  
+  Hi Naren
   </body>
 </html>

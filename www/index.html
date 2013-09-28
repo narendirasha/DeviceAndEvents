@@ -10,7 +10,7 @@
     //
     function onLoad() {
       document.addEventListener("online", onOnline, false);
-        document.addEventListener("deviceready", onDeviceReady, false);
+       document.addEventListener("deviceready", onDeviceReady, false);
     }
 
     // device APIs are available
@@ -18,18 +18,20 @@
     function onDeviceReady() {
     	 alert('Device ready')
     	document.addEventListener("backbutton", onBackKeyDown, false);
-         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
-    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+    	document.addEventListener("online", onOnline, false);
+        document.addEventListener("offline", onOffline, false);
+        
+         //document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    	  //document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
     	  
-    	 document.addEventListener("menubutton", onMenuKeyDown, false);
+    	 //document.addEventListener("menubutton", onMenuKeyDown, false);
       //window.addEventListener("batterycritical", onBatteryCritical, false);
     	 // window.addEventListener("batterylow", onBatteryLow, false);
     	 // window.addEventListener("batterystatus", onBatteryStatus, false);
     	 
     	
        
-      	document.addEventListener("online", onOnline, false);
-        document.addEventListener("offline", onOffline, false);
+      
         
         
     	// document.addEventListener("searchbutton", onSearchKeyDown, false);
@@ -76,7 +78,8 @@
     	
     	alert('Hi Naren: onMenuKeyDown event')
     }
-	function onSearchKeyDown() {
+
+    function onSearchKeyDown() {
 		alert('Hi Naren: onSearchKeyDown event')
     }
     

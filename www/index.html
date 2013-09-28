@@ -13,12 +13,25 @@
     // device APIs are available
     //
     function onDeviceReady() {
+      
+        alert('Device is ready Naren')
         var element = document.getElementById('deviceProperties');
         element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
                             'Device Cordova: '  + device.cordova  + '<br />' +
                             'Device Platform: ' + device.platform + '<br />' +
                             'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Model: '    + device.model    + '<br />' +
                             'Device Version: '  + device.version  + '<br />';
+                            
+        document.addEventListener("pause", onPause, false);
+      	document.addEventListener("resume", onResume, false);
+    }
+    
+    function onPause(){
+    	alert('Hi Naren: Pause event')
+    }
+    function onResume(){
+    	alert('Hi Naren: onResume event')
     }
 
     </script>

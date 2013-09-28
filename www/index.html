@@ -19,10 +19,7 @@
         window.addEventListener("batterylow", onBatteryLow, false);
     	window.addEventListener("batterystatus", onBatteryStatus, false);
     	document.addEventListener("menubutton", onMenuKeyDown, false);
-    	 document.addEventListener("searchbutton", onSearchKeyDown, false);
-    	 document.addEventListener("endcallbutton", onEndCallKeyDown, false);
-    	 
-    	  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
+    	 document.addEventListener("backbutton", onBackKeyDown, false);
     	  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
     	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
     }
@@ -67,6 +64,9 @@
     }
     function onBatteryStatus(info) {
         alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
+    function onBackKeyDown(){
+    	alert('Hi Naren: onBackKeyDown event')
     }
 
     </script>

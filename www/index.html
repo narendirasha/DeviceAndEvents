@@ -16,9 +16,16 @@
     // device APIs are available
     //
     function onDeviceReady() {
-       document.addEventListener("backbutton", onBackKeyDown, false);
+      window.addEventListener("batterycritical", onBatteryCritical, false);
+    	  window.addEventListener("batterylow", onBatteryLow, false);
+    	  window.addEventListener("batterystatus", onBatteryStatus, false);
+       
       document.addEventListener("online", onOnline, false);
         document.addEventListener("offline", onOffline, false);
+         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+        
+        document.addEventListener("backbutton", onBackKeyDown, false);
     }
 
     // Handle the pause event
@@ -30,7 +37,26 @@
       alert('Naren its onOffline')
     }
     function onBackKeyDown() {
+      super();
       alert('Naren its onBackKeyDown')
+    }
+     function onBatteryCritical(info) {
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+    }
+    
+    function onBatteryLow(info) {
+        alert("Battery Level Low " + info.level + "%");
+    }
+    function onBatteryStatus(info) {
+        alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
+    
+     function onVolumeDownKeyDown() {
+    	alert('Hi Naren: onVolumeDownKeyDown event')
+    }
+    
+    function onVolumeUpKeyDown() {
+    	alert('Hi Naren: onVolumeUpKeyDown event')
     }
 
     </script>

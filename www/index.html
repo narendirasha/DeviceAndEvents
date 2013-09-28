@@ -25,6 +25,17 @@
                             
         document.addEventListener("pause", onPause, false);
       	document.addEventListener("resume", onResume, false);
+      	document.addEventListener("online", onOnline2, false);
+    	 document.addEventListener("offline", onOffline, false);
+     	 document.addEventListener("backbutton", onBackKeyDown, false);
+     	 document.addEventListener("menubutton", onMenuKeyDown, false);
+     	 document.addEventListener("searchbutton", onSearchKeyDown, false);
+     	 document.addEventListener("endcallbutton", onEndCallKeyDown, false);
+     	 
+     	  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
+     	  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+     	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+                             
     }
     
     function onPause(){
@@ -33,10 +44,68 @@
     function onResume(){
     	alert('Hi Naren: onResume event')
     }
+    
+    function onOnline1(){
+    	alert('Hi Naren: onOnline111 event')
+    }
+    function onOnline2(){
+    	alert('Hi Naren: onOnline222 event')
+    }
+	 function onOffline(){
+    	alert('Hi Naren: onOffline event')
+    }
+    function onBackKeyDown(){
+    	alert('Hi Naren: onBackKeyDown event')
+    }
+	
+	
+    function onMenuKeyDown() {
+    	super();
+    	alert('Hi Naren: onMenuKeyDown event')
+    }
+	function onSearchKeyDown() {
+		alert('Hi Naren: onSearchKeyDown event')
+    }
+    
+    function onStartCallKeyDown() {
+   	 	alert('Hi Naren: onStartCallKeyDown event')
+    }
+    function onEndCallKeyDown() {
+    	alert('Hi Naren: onEndCallKeyDown event')
+    
+    }
+    
+    function onVolumeDownKeyDown() {
+    	alert('Hi Naren: onVolumeDownKeyDown event')
+    }
+    
+    function onVolumeUpKeyDown() {
+    	alert('Hi Naren: onVolumeUpKeyDown event')
+    }
+    
+    // *******************
+    function Battery(){
+		window.addEventListener("batterycritical", onBatteryCritical, false);
+    	  window.addEventListener("batterylow", onBatteryLow, false);
+    	  window.addEventListener("batterystatus", onBatteryStatus, false);
+    	  
+    }
+    
+    function onBatteryCritical(info) {
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+    }
+    
+    function onBatteryLow(info) {
+        alert("Battery Level Low " + info.level + "%");
+    }
+    function onBatteryStatus(info) {
+        alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
 
     </script>
   </head>
   <body>
     <p id="deviceProperties">Loading device properties...</p>
+    <button onclick='Battery();'>Battery Status</button>
   </body>
 </html>

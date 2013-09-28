@@ -8,13 +8,30 @@
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+    
 
     // device APIs are available
+    
+    function onLoad() {
+        document.addEventListener("online", onOnline1, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+    }
     //
     function onDeviceReady() {
+     alert('Device ready alert');
     
-    	document.addEventListener("pause", onPause, false);
+    	
+    	
+        var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Model: '    + device.model    + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+                            
+        document.addEventListener("pause", onPause, false);
     	document.addEventListener("resume", onResume, false);
     	document.addEventListener("online", onOnline2, false);
     	 document.addEventListener("offline", onOffline, false);
@@ -26,23 +43,12 @@
     	  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
     	  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
     	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
-    	
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Model: '    + device.model    + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
                             
-        alert('Device ready alert');
+       
         
     }
     
-    function onLoad() {
-        document.addEventListener("online", onOnline1, false);
-        
-    }
+    
     
     function onPause(){
     	alert('Hi Naren: Pause event')

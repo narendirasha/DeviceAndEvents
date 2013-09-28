@@ -24,6 +24,12 @@
         document.addEventListener("offline", onOffline, false);
          document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
     	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+    	  
+    	  document.addEventListener("menubutton", onMenuKeyDown, false);
+    	 document.addEventListener("searchbutton", onSearchKeyDown, false);
+    	 document.addEventListener("endcallbutton", onEndCallKeyDown, false);
+    	 
+    	  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
         
         document.addEventListener("backbutton", onBackKeyDown, false);
     }
@@ -37,7 +43,7 @@
       alert('Naren its onOffline')
     }
     function onBackKeyDown() {
-      super();
+      
       alert('Naren its onBackKeyDown')
     }
      function onBatteryCritical(info) {
@@ -58,9 +64,26 @@
     function onVolumeUpKeyDown() {
     	alert('Hi Naren: onVolumeUpKeyDown event')
     }
+    
+    
+    function onMenuKeyDown() {
+    	super();
+    	alert('Hi Naren: onMenuKeyDown event')
+    }
+	function onSearchKeyDown() {
+		alert('Hi Naren: onSearchKeyDown event')
+    }
+    
+    function onStartCallKeyDown() {
+   	 	alert('Hi Naren: onStartCallKeyDown event')
+    }
+    function onEndCallKeyDown() {
+    	alert('Hi Naren: onEndCallKeyDown event')
+    
 
     </script>
   </head>
   <body onload="onLoad()">
+  <div>Loading...</div>
   </body>
 </html>

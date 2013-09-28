@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pause Example</title>
+    <title>Battery Critical Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -9,77 +9,30 @@
     // Wait for device API libraries to load
     //
     function onLoad() {
-      document.addEventListener("online", onOnline, false);
-       document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
     }
 
     // device APIs are available
     //
     function onDeviceReady() {
-    	 alert('Device ready')
-    	document.addEventListener("backbutton", onBackKeyDown, false);
-    	document.addEventListener("online", onOnline, false);
-        document.addEventListener("offline", onOffline, false);
-        
-         //document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
-    	  //document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
-    	  
-    	 //document.addEventListener("menubutton", onMenuKeyDown, false);
-      //window.addEventListener("batterycritical", onBatteryCritical, false);
-    	 // window.addEventListener("batterylow", onBatteryLow, false);
-    	 // window.addEventListener("batterystatus", onBatteryStatus, false);
+        window.addEventListener("batterycritical", onBatteryCritical, false);
+        window.addEventListener("batterylow", onBatteryLow, false);
+    	window.addEventListener("batterystatus", onBatteryStatus, false);
+    	document.addEventListener("menubutton", onMenuKeyDown, false);
+    	 document.addEventListener("searchbutton", onSearchKeyDown, false);
+    	 document.addEventListener("endcallbutton", onEndCallKeyDown, false);
     	 
-    	
-       
-      
-        
-        
-    	// document.addEventListener("searchbutton", onSearchKeyDown, false);
-    	 //document.addEventListener("endcallbutton", onEndCallKeyDown, false);
-    	 
-    	 // document.addEventListener("startcallbutton", onStartCallKeyDown, false);
-        
-        
+    	  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
+    	  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+    	  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
     }
-
-    // Handle the pause event
-    //
-    function onOnline() {
-      alert('Naren  its onOnline')
-    }
-    function onOffline() {
-      alert('Naren its onOffline')
-    }
-    function onBackKeyDown() {
-      
-      alert('Naren its onBackKeyDown')
-    }
-     function onBatteryCritical(info) {
-        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
-    }
-    
-    function onBatteryLow(info) {
-        alert("Battery Level Low " + info.level + "%");
-    }
-    function onBatteryStatus(info) {
-        alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
-    }
-    
-     function onVolumeDownKeyDown() {
-    	alert('Hi Naren: onVolumeDownKeyDown event')
-    }
-    
-    function onVolumeUpKeyDown() {
-    	alert('Hi Naren: onVolumeUpKeyDown event')
-    }
-    
-    
+	
+	
     function onMenuKeyDown() {
     	
     	alert('Hi Naren: onMenuKeyDown event')
     }
-
-    function onSearchKeyDown() {
+	function onSearchKeyDown() {
 		alert('Hi Naren: onSearchKeyDown event')
     }
     
@@ -89,10 +42,35 @@
     function onEndCallKeyDown() {
     	alert('Hi Naren: onEndCallKeyDown event')
     
+    }
+    
+    function onVolumeDownKeyDown() {
+    	alert('Hi Naren: onVolumeDownKeyDown event')
+    }
+    
+    function onVolumeUpKeyDown() {
+    	alert('Hi Naren: onVolumeUpKeyDown event')
+    }
+    
+    // Handle the batterycritical event
+    //
+    function onBatteryCritical(info) {
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+    }
+    
+    function onBatteryCritical(info) {
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
+    }
+    
+    function onBatteryLow(info) {
+        alert("Battery Level Low " + info.level + "%");
+    }
+    function onBatteryStatus(info) {
+        alert("Level: " + info.level + " isPlugged: " + info.isPlugged);
+    }
 
     </script>
   </head>
   <body onload="onLoad()">
-  
   </body>
 </html>
